@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 
-class UserControler extends Controller
+class UserController extends Controller
 {
     /**
      * function index

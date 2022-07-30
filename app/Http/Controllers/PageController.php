@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Page;
 
-class PageControler extends Controller
+class PageController extends Controller
 {
     /**
      * function index

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Nome;
 
-class NomeControler extends Controller
+class NomeController extends Controller
 {
     /**
      * function index
@@ -15,7 +15,10 @@ class NomeControler extends Controller
      */
     public function index(Request $request)
     {
-        $nomes = Nome::latest()->paginate(10);
+        $orderBy = $request->query('order-by', 'id');
+        $orderDirection = $request->query('dir', 'asc');
+
+        $nomes = Nome::orderBy($orderBy, $orderDirection)->paginate(10);
 
         return view('nomes.index', [
             'nomes' => $nomes

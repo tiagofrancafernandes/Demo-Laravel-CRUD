@@ -15,6 +15,10 @@
                     <a class="nav-link" href="{{ route('pages.index') }}">@lang('Pages')</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('nomes.index') }}">@lang('Nomes')</a>
+                </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="download">Darkly
                         <span class="caret"></span></a>

@@ -6,8 +6,16 @@
         <table class="table table-hover">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col" class="text-center">#</th>
-                    <th scope="col">Nome</th>
+                    <th scope="col" class="text-center text-white">
+                        <a
+                            class="text-white"
+                            href="{{ \App\Http\Helpers\RouteHelper::getNewDirection('id') }}">#</a>
+                    </th>
+                    <th scope="col" class="text-white">
+                        <a
+                            class="text-white"
+                            href="{{ \App\Http\Helpers\RouteHelper::getNewDirection('nome') }}">Nome</a>
+                    </th>
                     <th scope="col" class="text-center">Actions</th>
                 </tr>
             </thead>
