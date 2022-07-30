@@ -9,17 +9,17 @@
             @csrf
 
             <div class="mb-3">
-                <label for="nome" class="form-label">Nome</label>
+                <label for="name" class="form-label">Nome</label>
                 <input
                     type="text"
                     class="form-control"
-                    id="name"
-                    name="name"
-                    value="{{ old('name') ?? null }}"
-                    aria-describedby="nameHelp"
+                    id="nome"
+                    name="nome"
+                    value="{{ old('nome') ?? null }}"
+                    aria-describedby="nomeHelp"
                     placeholder="Your name"
                     required>
-                <div id="nameHelp" class="form-text">Your name</div>
+                <div id="nomeHelp" class="form-text">Your name</div>
             </div>
 
             <div class="mb-3">

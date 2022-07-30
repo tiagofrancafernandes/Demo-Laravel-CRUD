@@ -15,7 +15,7 @@ class NomeControler extends Controller
      */
     public function index(Request $request)
     {
-        $nomes = Nome::latest()->paginate(20);
+        $nomes = Nome::latest()->paginate(10);
 
         return view('nomes.index', [
             'nomes' => $nomes
@@ -40,7 +40,7 @@ class NomeControler extends Controller
         }
 
         return view('nomes.show', [
-            'Nome' => $nome,
+            'nome' => $nome,
         ]);
     }
 
@@ -62,7 +62,7 @@ class NomeControler extends Controller
         }
 
         return view('nomes.edit', [
-            'Nome' => $nome,
+            'nome' => $nome,
         ]);
     }
 
@@ -96,7 +96,7 @@ class NomeControler extends Controller
         }
 
         return view('nomes.confirm_delete', [
-            'Nome' => $nome,
+            'nome' => $nome,
         ]);
     }
 
@@ -158,7 +158,7 @@ class NomeControler extends Controller
 
         return redirect()
                 ->route('nomes.index')
-                ->with('success', __('User created successfully'));
+                ->with('success', __('Nome created successfully'));
     }
 
     /**

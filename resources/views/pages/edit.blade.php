@@ -9,26 +9,26 @@
             @csrf
 
             <div class="mb-3">
-                <label for="name" class="form-label">
-                    Name
-                    <em class="text-muted text-small">(Leave blank if you don't want to change)</em>
+                <label for="title" class="form-label">
+                    Title
+                    <em class="text-muted text-small">(Le blank if you don't want to change)</em>
                 </label>
                 <input
                     type="text"
                     class="form-control"
-                    id="name"
-                    name="name"
-                    value="{{ old('name') ?? $page->name ?? null }}"
-                    aria-describedby="nameHelp"
-                    placeholder="Your name"
+                    id="title"
+                    name="title"
+                    value="{{ old('title') ?? $page->title ?? null }}"
+                    aria-describedby="title"
+                    placeholder="Your Title"
                     required>
-                <div id="nameHelp" class="form-text">Your name</div>
+                <div id="title" class="form-text">Your Title</div>
             </div>
 
             <div class="mb-3">
                 <label for="slug" class="form-label">
                     Slug
-                    <em class="text-muted text-small">(Leave blank if you don't want to change)</em>
+                    <em class="text-muted text-small">(Leave blanf you don't want to change)</em>
                 </label>
                 <input
                     type="text"
@@ -43,9 +43,9 @@
             </div>
 
             <div class="mb-3">
-                <label for="name" class="form-label">
+                <label for="active" class="form-label">
                     Acive
-                    <em class="text-muted text-small">(Leave blank if you don't want to change)</em>
+                    <em class="text-muted text-small">(Leave blan)</em>
                 </label>
 
                 <div class="mb-2">

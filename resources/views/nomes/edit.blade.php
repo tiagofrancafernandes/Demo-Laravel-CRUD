@@ -1,6 +1,6 @@
 @extends('nomes.layout')
 
-@section('action_title', __("Edit: {$nome->name}"))
+@section('action_title', __("Edit: {$nome->nome}"))
 
 @section('sub_content')
 <div class="row">
@@ -9,7 +9,7 @@
             @csrf
 
             <div class="mb-3">
-                <label for="name" class="form-label">
+                <label for="nome" class="form-label">
                     Name
                     <em class="text-muted text-small">(Leave blank if you don't want to change)</em>
                 </label>
@@ -18,8 +18,8 @@
                     class="form-control"
                     id="nome"
                     name="nome"
-                    value="{{ old('nome') ?? $nome->name ?? null }}"
-                    aria-describedby="nameHelp"
+                    value="{{ old('nome') ?? $nome->nome ?? null }}"
+                    aria-describedby="nomeHelp"
                     placeholder="Your name"
                     required>
                 <div id="nameHelp" class="form-text">Your name</div>

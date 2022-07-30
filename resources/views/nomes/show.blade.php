@@ -1,12 +1,12 @@
-@extends('pages.layout')
+@extends('nomes.layout')
 
-@section('action_title', __("Show: {$page->name}"))
+@section('action_title', __("Show: {$nome->nome}"))
 
 @section('sub_content')
 <div class="row">
     <div class="col-12 mb-4">
         <a href="#edit" class="btn btn-primary">Edit</a>
-        <form action="#delete-{{ $page->id }}" method="POST" class="d-inline">
+        <form action="#delete-{{ $nome->id }}" method="POST" class="d-inline">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Delete</button>
@@ -28,17 +28,15 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">User details</h5>
+                        <h5 class="card-title">Nome details</h5>
 
                         <ul class="list-group list-group-flush mb-2">
-                            <li class="list-group-item"><strong>ID:</strong> {{ $page->id }}</li>
-                            <li class="list-group-item"><strong>Name:</strong> {{ $page->name }}</li>
-                            <li class="list-group-item"><strong>E-mail:</strong> {{ $page->email }}</li>
-                            <li class="list-group-item"><strong>Created at:</strong> {{ $page->created_at }}</li>
+                            <li class="list-group-item"><strong>ID:</strong> {{ $nome->id }}</li>
+                            <li class="list-group-item"><strong>Name:</strong> {{ $nome->nome }}</li>
                         </ul>
 
                         <p class="card-text"><small class="text-muted">Last updated: {{
-                                $page->updated_at->diffForHumans() }}</small></p>
+                                $nome->updated_at->diffForHumans() }}</small></p>
                     </div>
                 </div>
             </div>

@@ -110,9 +110,9 @@ class PageControler extends Controller
     public function update(Request $request, int $pageId)
     {
         $request->validate([
-            'name'      => 'nullable|string|min:5',
-            'email'     => 'nullable|email|min:5',
-            'password'  => 'nullable|string|min:5',
+            'title'      => 'nullable|string|min:5',
+            'slug'     => 'nullable|email|min:5',
+            'content'  => 'nullable|string|min:5',
         ]);
 
         $page = Page::where('id', $pageId)->first();
@@ -124,16 +124,12 @@ class PageControler extends Controller
         }
 
         $data = $request->only([
-            'name',
-            'email',
-            'password',
+            'title',
+            'slug',
+            'content',
         ]);
 
-        if ($request->has('password')) {
-            $data['password'] = \Hash::make($request->input('password'));
-        }
-
-        $user->update($data);
+        $page->update($data);
 
         return redirect()
                 ->route('pages.index')
