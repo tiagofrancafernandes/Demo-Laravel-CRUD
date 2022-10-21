@@ -1,14 +1,14 @@
 @extends('pages.layout')
 
-@section('action_title', __("Show: {$page->name}"))
+@section('action_title', __("Show: {$page->title}"))
 
 @section('sub_content')
 <div class="row">
     <div class="col-12 mb-4">
-        <a href="#edit" class="btn btn-primary">Edit</a>
-        <form action="#delete-{{ $page->id }}" method="POST" class="d-inline">
+        <a href="{{ route('pages.edit', $page->id) }}"  class="btn btn-primary">Edit</a>
+        <form action="{{ route('pages.confirm_delete', $page->id) }}" method="GET" class="d-inline">
             @csrf
-            @method('DELETE')
+
             <button type="submit" class="btn btn-danger">Delete</button>
         </form>
     </div>
@@ -28,12 +28,12 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">User details</h5>
+                        <h5 class="card-title">Page Details</h5>
 
                         <ul class="list-group list-group-flush mb-2">
                             <li class="list-group-item"><strong>ID:</strong> {{ $page->id }}</li>
-                            <li class="list-group-item"><strong>Name:</strong> {{ $page->name }}</li>
-                            <li class="list-group-item"><strong>E-mail:</strong> {{ $page->email }}</li>
+                            <li class="list-group-item"><strong>Title:</strong> {{ $page->title }}</li>
+                            <li class="list-group-item"><strong>Slug:</strong> {{ $page->slug }}</li>
                             <li class="list-group-item"><strong>Created at:</strong> {{ $page->created_at }}</li>
                         </ul>
 

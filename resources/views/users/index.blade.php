@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('users.layout')
 
 {{-- @section('action_title', __('List')) --}}
 

@@ -5,12 +5,12 @@
 @section('content')
 <div class="row d-flex justify-content-center mb-4">
     <div class="col-8 mb-4 d-flex justify-content-center">
-        <h3>Are you sure you want to delete user {{ $user->name }} - #{{ $user->id }}</h3>
+        <h3>Are you sure you want to delete Page {{ $page->name }} - #{{ $page->id }}</h3>
     </div>
 
     <div class="col-8 mb-4">
 
-        <form action="{{ route('users.delete', $user->id) }}" method="POST" class="d-inline">
+        <form action="{{ route('pages.delete', $page->id) }}" method="POST" class="d-inline">
             @csrf
             @method('DELETE')
             <div class="d-flex justify-content-evenly">

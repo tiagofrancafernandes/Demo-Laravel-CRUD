@@ -82,14 +82,14 @@ class PageController extends Controller
      * function confirmDelete
      *
      * @param Request $request,
-     * @param int $userId
+     * @param int $pageId
      * @return
      */
     public function confirmDelete(Request $request, int $pageId)
     {
-        $user = Page::where('id', $pageId)->first();
+        $page = Page::where('id', $pageId)->first();
 
-        if (!$user) {
+        if (!$page) {
             return redirect()
                 ->route('pages.index')
                 ->with('error', __('Page not found'));
@@ -104,7 +104,7 @@ class PageController extends Controller
      * function update
      *
      * @param Request $request,
-     * @param int $userId
+     * @param int $pageId
      * @return
      */
     public function update(Request $request, int $pageId)
@@ -178,7 +178,7 @@ class PageController extends Controller
      * @param int $userId
      * @return
      */
-    public function delete(Request $request, int $userId)
+    public function delete(Request $request, int $pageId)
     {
         $page = Page::where('id', $pageId)->first();
 

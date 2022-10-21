@@ -19,7 +19,7 @@
                     id="title"
                     name="title"
                     value="{{ old('title') ?? $page->title ?? null }}"
-                    aria-describedby="title"
+                    aria-describedby="titleHelp"
                     placeholder="Your Title"
                     required>
                 <div id="title" class="form-text">Your Title</div>
